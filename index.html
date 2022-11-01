@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-color:#b3e5fc">
+        <img class ="mr-3" src="static/images/bacteria.jpeg" height="15%" width="15%">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <h2 class> Overview of Project</h2>
+        <p> In this analysis, Improbable Beef is searching for bacteria that will provide the best taste. The hypothesis is that ideal bacteria to make synthetic beef is found in the belly button. We are helping our client, Roza, who wants to build dashboard that research participants and researchers can access. The dashboard would include specific data by the research participants' IDs to show the following:
+          <li>Demographic panel of the participant</li>
+          <li>Bar chart of the top 10 bacteria cultures found in the participant's belly button samples</li>
+          <li>Bubble chart showing the bacteria cultures found in the participant's belly button samples, with the size of the bubbles corresponding to the amount found</li>
+          <li>Guage chart that displays the test subject's weekly washing frequency's value as a measure from 0 - 10.</li>
+         </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p class="p-3 mb-2 bg-info text-dark">This bar chart shows the top 10 bacteria cultures that were found in the test subject's samples. The x axis depicts the OTU ID and the y axis depicts the amount of each sample present. You can hover over the values for more details. </p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p class="p-3 mb-2 bg-info text-dark"> This gauge chart displays test subject's weekly washing frequency's value as a measure from 0 - 10 on the progress bar when an individual ID is selected from the dropdown menu. </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p class="p-3 mb-2 bg-info text-dark"> This bubble chart depicts the test subject's OTU IDs as the x axis value, sample values as the y axis values and the marker size. You can hover over each bubble for additional details. </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/charts.js"></script>
+
+</body>
+
+</html>
